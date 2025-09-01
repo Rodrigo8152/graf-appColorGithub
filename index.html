@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selector de Color RGB</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center vh-100">
+
+  <div class="card shadow-lg p-4 rounded-4" style="max-width: 800px; width: 100%;">
+    <h2 class="text-center mb-4 fw-bold">🎨 Selector de Color RGB</h2>
+    
+    <div class="row g-4">
+      <!-- Controles -->
+      <div class="col-md-6">
+        
+        <!-- Color Picker -->
+        <div class="mb-4 text-center">
+          <label for="colorPicker" class="form-label fw-semibold">Elige un color</label>
+          <input type="color" id="colorPicker" value="#000000" class="form-control form-control-color w-50 mx-auto border-0 shadow-sm">
+        </div>
+
+        <!-- Rojo -->
+        <div class="mb-3">
+          <label for="red" class="form-label fw-semibold text-danger">Rojo</label>
+          <div class="d-flex gap-2 align-items-center">
+            <input type="range" class="form-range flex-grow-1 slider-red" min="0" max="255" id="red" value="0">
+            <input type="number" class="form-control w-25" min="0" max="255" id="redInput" value="0">
+          </div>
+        </div>
+
+        <!-- Verde -->
+        <div class="mb-3">
+          <label for="green" class="form-label fw-semibold text-success">Verde</label>
+          <div class="d-flex gap-2 align-items-center">
+            <input type="range" class="form-range flex-grow-1 slider-green" min="0" max="255" id="green" value="0">
+            <input type="number" class="form-control w-25" min="0" max="255" id="greenInput" value="0">
+          </div>
+        </div>
+
+        <!-- Azul -->
+        <div class="mb-3">
+          <label for="blue" class="form-label fw-semibold text-primary">Azul</label>
+          <div class="d-flex gap-2 align-items-center">
+            <input type="range" class="form-range flex-grow-1 slider-blue" min="0" max="255" id="blue" value="0">
+            <input type="number" class="form-control w-25" min="0" max="255" id="blueInput" value="0">
+          </div>
+        </div>
+      </div>
+
+      <!-- Recuadro color -->
+      <div class="col-md-6 text-center">
+        <div id="colorBox" class="color-box shadow rounded-3 mb-3"></div>
+        <p class="mb-2">
+          <span class="badge bg-dark p-2">RGB: <strong id="rgbCode">rgb(0, 0, 0)</strong></span>
+        </p>
+        <p class="mb-3">
+          <span class="badge bg-secondary p-2">HEX: <strong id="hexCode">#000000</strong></span>
+        </p>
+        <button class="btn btn-outline-dark shadow-sm" id="copyBtn">📋 Copiar Código</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
